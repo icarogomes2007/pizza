@@ -1,0 +1,82 @@
+@import url("water.css");
+
+
+@font-face {
+    font-family: "Orienta";
+    src: url("fonts/orienta.ttf");
+}
+
+/* FONTE */
+body {
+    font-family: "orienta";
+}
+
+/* NAVBAAR */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+/* IMAGENS */
+
+/* HEADER */
+header {
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden; /* Ensures blur doesn't overflow */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("img/manul.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px);
+    z-index: 0; /* Send it to the back */
+}
+
+#logo {
+    position: relative;
+    z-index: 1; /* Make sure it's above the blurred background */
+    font-size: 5em;
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+footer{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}

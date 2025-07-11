@@ -1,0 +1,58 @@
+/* Container for the whole responsive section */
+.responsive {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; /* spacing between gallery items */
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Each gallery item */
+.gallery {
+  flex: 1 1 calc(25% - 32px); /* 4 columns minus gap compensation */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.gallery:hover {
+  transform: scale(1.02);
+}
+
+/* Image inside the gallery */
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Description text below the image */
+.desc {
+  padding: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .gallery {
+    flex: 1 1 calc(33.33% - 32px); /* 3 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    flex: 1 1 calc(50% - 32px); /* 2 columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    flex: 1 1 100%; /* 1 column */
+  }
+}

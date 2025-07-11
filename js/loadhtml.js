@@ -24,4 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error("Error loading nav:", error));
+
+    // carrega o footer
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+            const footer = doc.querySelector("footer");
+            if (footer) {
+                document.querySelector("footer").innerHTML = footer.innerHTML;
+            }
+        })
+        .catch(error => console.error("Error loading footer:", error));
 });
